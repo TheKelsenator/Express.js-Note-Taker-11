@@ -5,18 +5,13 @@
         "note_id": ""
     },
     {
-        "title": "New Note",
-        "text": "Tada",
-        "note_id": "db48"
-    },
-    {
         "title": "Buck",
-        "text": "Trim the dog's nails.",
-        "note_id": "b364"
+        "text": "Trim dog's nails\n",
+        "note_id": "cfbd"
     },
     {
-        "title": "Paris",
-        "text": "Eat all the croissants",
-        "note_id": "fa0d"
+        "title": "House Chores",
+        "text": "Split Kindling\nLaundry \nDishes",
+        "note_id": "fdfb"
     }
 ]
