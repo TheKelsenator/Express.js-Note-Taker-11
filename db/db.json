@@ -1,17 +1,7 @@
 [
     {
-        "title": "Test Title",
-        "text": "Test Text",
-        "note_id": ""
-    },
-    {
-        "title": "Buck",
-        "text": "Trim dog's nails\n",
-        "note_id": "cfbd"
-    },
-    {
-        "title": "House Chores",
-        "text": "Split Kindling\nLaundry \nDishes",
-        "note_id": "fdfb"
+        "title": "Title Test",
+        "text": "Text Test",
+        "id": ""
     }
 ]
