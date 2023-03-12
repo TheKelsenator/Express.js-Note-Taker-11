@@ -1,10 +1,22 @@
-{
-  "notes": [
+[
     {
-      "title": "Test Title",
-      "text": "Test text",
-      "id": "Test id"
+        "title": "Test Title",
+        "text": "Test Text",
+        "note_id": ""
+    },
+    {
+        "title": "New Note",
+        "text": "Tada",
+        "note_id": "db48"
+    },
+    {
+        "title": "Buck",
+        "text": "Trim the dog's nails.",
+        "note_id": "b364"
+    },
+    {
+        "title": "Paris",
+        "text": "Eat all the croissants",
+        "note_id": "fa0d"
     }
-  ]
-}
-
+]
