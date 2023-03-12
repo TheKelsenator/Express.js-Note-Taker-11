@@ -19,7 +19,7 @@ app.post('/api/notes', (req, res) => {
     const newNote = {
       title,
       text,
-      note_id: uuid(),
+      id: uuid(),
     };
     fs.readFile('./db/db.json', 'utf8', (err, data) => {
       if (err) {
@@ -41,34 +41,30 @@ app.post('/api/notes', (req, res) => {
       status: 'success',
       body: newNote,
     };
-
-    console.log(response);
-    res.status(201).json(response);
+    console.info(response);
+    res.status(200).json(response);
   } else {
     res.status(500).json('Error in adding note');
   }
 });
 
-// Routes
+// Retrieves the landing page
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
+// Retrieves the notes page
 app.get('/notes', (req, res) => {
   res.sendFile(path.join(__dirname, '/public/notes.html'))
 })
 
+// Retrieves notes input
 app.get('/api/notes', (req, res) => {
   res.sendFile(path.join(__dirname, '/db/db.json'))
 });
 
 // Bonus - Delete Note
-// app.delete('/api/notes/:id', (req, res) => {
-//   const notes = JSON.parse(fs.readFileSync('./db/db.json'));
-//   const delNote = notes.filter((rmvNote) => rmvNote.id !== req.params.id);
-//   fs.writeFileSync('./db/db.json', JSON.stringify(delNote));
-//   res.json(delNote);
-// });
+
 
 // Listener
 app.listen(PORT, () =>
