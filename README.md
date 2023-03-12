@@ -9,6 +9,10 @@
 
   ## Description
 
+    <a href="https://choosealicense.com/licenses/mit">
+    <img src="https://img.shields.io/badge/License-MIT-blue" />
+    </a>
+
     A note taker app that can create, store and delete notes.
 
   ## Table of Contents
