@@ -64,7 +64,6 @@ app.get('/api/notes', (req, res) => {
   res.sendFile(path.join(__dirname, '/db/db.json'))
 });
 
-
 // Bonus - Delete Note
 app.delete('/api/notes/:id', (req, res) => {
   const noteId = req.params.id;
