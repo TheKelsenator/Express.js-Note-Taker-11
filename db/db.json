@@ -5,13 +5,28 @@
         "id": ""
     },
     {
-        "title": "House Chores",
-        "text": "Split kindling\nLaundry\nDishes",
-        "id": "e2fc"
+        "title": "Lord of the Rings",
+        "text": "Riddles in the dark.",
+        "id": "059d"
     },
     {
-        "title": "Buck",
-        "text": "Trim the dog's nails.\nRefill meds.",
-        "id": "405d"
+        "title": "House Chores",
+        "text": "Stack wood\nCut kindling\nLaundry\nVacuum ",
+        "id": "316c"
+    },
+    {
+        "title": "Dog Things",
+        "text": "Walk\nTrim Nails\nClean Ears\nTell him he's a good boy!",
+        "id": "07cc"
+    },
+    {
+        "title": "NREMT Prep",
+        "text": "Fingerprints for background check\nFind NREMT login info\nWrite check / Mail in\nSign up for test",
+        "id": "ee73"
+    },
+    {
+        "title": "Groceries ",
+        "text": "Greek Yogurt\nChia Seeds\nBananas\nGranola\nHoney ",
+        "id": "e8df"
     }
 ]
