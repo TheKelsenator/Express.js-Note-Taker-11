@@ -5,6 +5,7 @@ const uuid = require('./helpers/uuid');
 const term = require('./db/db.json');
 const PORT = process.env.PORT || 3001;
 
+
 const app = express();
 
 app.use(express.json());
@@ -63,8 +64,33 @@ app.get('/api/notes', (req, res) => {
   res.sendFile(path.join(__dirname, '/db/db.json'))
 });
 
-// Bonus - Delete Note
 
+// Bonus - Delete Note
+app.delete('/api/notes/:id', (req, res) => {
+  const noteId = req.params.id;
+  fs.readFile('./db/db.json', 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      res.status(500).json('Error in deleting note');
+    } else { 
+      let parsedNotes = JSON.parse(data);
+      const indexToRemove = parsedNotes.findIndex(note => note.id === noteId);
+      if (indexToRemove === -1) {
+        res.status(404).json('Note not found');
+      } else {
+        parsedNotes.splice(indexToRemove, 1);
+        fs.writeFile('./db/db.json', JSON.stringify(parsedNotes, null, 4), (writeErr) => {
+          if (writeErr) {
+            console.error(writeErr);
+            res.status(500).json('Error in deleting note');
+          } else {
+            res.status(200).json(parsedNotes);
+          }
+        });
+      }
+    }
+  });
+});
 
 // Listener
 app.listen(PORT, () =>

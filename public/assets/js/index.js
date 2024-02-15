@@ -9,7 +9,7 @@ if (window.location.pathname === '/notes') {
   noteText = document.querySelector('.note-textarea');
   saveNoteBtn = document.querySelector('.save-note');
   newNoteBtn = document.querySelector('.new-note');
-  noteList = document.querySelectorAll('.list-container .list-group');
+  noteList = document.querySelectorAll('.list-container');
 }
 
 // Show an element
@@ -79,21 +79,27 @@ const handleNoteSave = () => {
 
 // Delete the clicked note
 const handleNoteDelete = (e) => {
-  // Prevents the click listener for the list from being called when the button inside of it is clicked
   e.stopPropagation();
 
-  const note = e.target;
-  const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).id;
+  const note = e.target.parentElement;
+  const noteId = JSON.parse(note.getAttribute('data-note')).id;
 
   if (activeNote.id === noteId) {
     activeNote = {};
   }
-
-  deleteNote(noteId).then(() => {
-    getAndRenderNotes();
-    renderActiveNote();
-  });
+  console.log('Note ID:', noteId);
+  note.remove();
+  deleteNote(noteId);
 };
+
+// Modify the event listener to call handleNoteDelete
+noteList.forEach(list => {
+  list.addEventListener('click', e => {
+    if (e.target.classList.contains('delete-note')) {
+      handleNoteDelete(e);
+    }
+  });
+});
 
 // Sets the activeNote and displays it
 const handleNoteView = (e) => {
@@ -178,6 +184,14 @@ if (window.location.pathname === '/notes') {
   newNoteBtn.addEventListener('click', handleNewNoteView);
   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
   noteText.addEventListener('keyup', handleRenderSaveBtn);
+
+  noteList.forEach(list => {
+    list.addEventListener('click', e => {
+      if (e.target.classList.contains('delete-note')) {
+        handleNoteDelete(e);
+      }
+    });
+  });
 }
 
 getAndRenderNotes();
