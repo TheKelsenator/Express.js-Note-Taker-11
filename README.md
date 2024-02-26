@@ -19,7 +19,7 @@
   - [License](#license)
   - [Screenshots](#screenshots)
   - [Links](#links)
-  - [Contact Me](#contact)
+  - [Contact Me](#contact-me)
 
 ## User Story
 
