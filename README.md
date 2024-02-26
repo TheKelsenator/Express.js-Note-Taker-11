@@ -69,8 +69,8 @@
 
 ## Screenshots
 
-![alt_text](./public/assets/images/Screenshot%20(37).png)
-![alt_text](./public/assets/images/Screenshot%20(40).png)
+![alt_text](./public/assets/images/Screenshot(119).png)
+![alt_text](./public/assets/images/Screenshot(120).png)
 
 ## Links
 
